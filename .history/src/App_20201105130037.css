@@ -1,0 +1,47 @@
+
+.blogContainer {
+  display: flex;
+  background-color: #f9f9f9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 10px;
+  padding: 10px;
+  padding-left: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.blogContainer:hover {
+  background-color: #f3f3f3;
+  padding-left: 15px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border-left: 15px crimson solid;
+}
+.blogContainer a {
+  text-decoration: none;
+  color: #222
+}
+.blogContainer > div:first-child {
+  flex: 1
+}
+.blogContainer > div:last-child {
+  display: flex;
+  flex-direction: column;
+}
+.blogContainer > div:last-child button {
+  flex: 1;
+  margin: 10px 5px;
+  height: 20px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+}
+.blogContainer > div:last-child button:first-child {
+  background-color: #d39e00;
+}
+.blogContainer > div:last-child button:first-child:active {
+  background-color: #685417;
+}
+.blogContainer > div:last-child button:last-child {
+  background-color: #dc3545;
+}
