@@ -11,7 +11,7 @@ function Blogs(props) {
         axios.get('http://localhost:3001/', {withCredentials: true})
         .then(resp => setBlogs(resp.data))
         .catch(err => {
-            if (err.response.data.redirect) {
+            if (err.response && err.response.data.redirect) {
                 props.history.push("/login")
             }
         })
@@ -25,9 +25,20 @@ function Blogs(props) {
     
     return (
         <div className="blogsWrapper">
-            <Link to='/new-blog'>
-                <button className="addBtn">Add</button>
-            </Link>
+            <div className='btns'>
+                <button className="logoutBtn" onClick={() => {
+                    axios.get('http://localhost:3001/logout', {withCredentials: true})
+                    .then(resp => {
+                        props.history.push("/login")
+                    })
+                    .catch(err => {
+                        console.log(err)
+                    })
+                }}>Logout</button>
+                <Link to='/new-blog'>
+                    <button className="addBtn">Add</button>
+                </Link>
+            </div>
             {blogComponent}
         </div>
     )
